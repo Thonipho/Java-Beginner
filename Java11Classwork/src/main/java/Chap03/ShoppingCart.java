@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Chap02;
+package Chap03;
 
 /**
  *
  * @author User
  */
-public class SayHello {
+public class ShoppingCart {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Welcome to the Shopping Cart!");
     }
-
 }

@@ -11,19 +11,19 @@ package exercise;
  */
 public class ShoppingCart {
     public static void main(String[] args) {
-        String custName = "T maV";
-        String itemDesc = "Shirt";
+        String custName[] = {"T maV","Smith","Bob","Amy"};
+        String itemDesc []= {"Shirt","pants"};
         
     // numeric fields
-    
-        double price = 23.40;
+        
+        double itemprice [] = {23.40, 34,56};
         int quantity = 3;
         double tax = 1.04;
         double total;
-        String message = custName+"wants to purchase"+quantity+" "+itemDesc;
+        String message = custName[0]+"wants to purchase"+quantity+" "+itemDesc;
         
         //calculating total cost
-        total  = (price+quantity);
+        total  = (itemprice[1]+quantity);
         
         // Declare and initialize outOfStock variable
         boolean outOfStock = false;
