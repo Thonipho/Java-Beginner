@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Chap07;
+package sg1.Chap07;
 
 /**
  *
