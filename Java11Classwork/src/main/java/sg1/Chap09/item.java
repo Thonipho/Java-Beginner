@@ -10,5 +10,15 @@ package Chap09;
  * @author User
  */
 public class item {
+    private double price;
+
+    public item(double price) {
+        this.price = price;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+    
     
 }

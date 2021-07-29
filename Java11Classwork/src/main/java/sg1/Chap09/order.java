@@ -10,5 +10,8 @@ package Chap09;
  * @author User
  */
 public class order {
-    
+    public static void main(String[] args) {
+        item item1 = new item(10.00);
+        System.out.println(item1.getPrice());
+    }
 }
