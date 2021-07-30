@@ -60,6 +60,11 @@ public class Clothing {
     public double getPrice() {
         return price;
     }
+    
+    @Override
+    public String toString() {
+        return "This shirt is a "+desc+ " ;"+ "Price: "+ getPrice()+","+" Color: "+ getColorCode();
+    }
 
   
 }

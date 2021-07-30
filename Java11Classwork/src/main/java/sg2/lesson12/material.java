@@ -13,10 +13,14 @@ public abstract class material {
     
     private String materialType;
 
-    public String getMaterialType() {
+    public  String getMaterialType(){
         return materialType;
     }
-
-    public abstract void setMaterialType(String materialType);
+    
+    public void setMaterialType(String materialType) {
+        this.materialType = materialType;
+    }
+    
+    public abstract double getPrice();
     
 }
