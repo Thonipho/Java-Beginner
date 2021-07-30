@@ -35,7 +35,7 @@ public class twoDArrays {
         studentDetails [3][3] = "english";
         
         for (int i=0; i<studentDetails.length; i++){
-            
+            System.out.println(i);
             for (int j=0; j<studentDetails[i].length; j++){
                 System.out.println(j);
             }

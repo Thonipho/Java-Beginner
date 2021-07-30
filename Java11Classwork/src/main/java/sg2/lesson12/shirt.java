@@ -12,13 +12,11 @@ package sg2.lesson12;
 public class shirt extends Clothing {
     private char fit;
     private String sleeve;
-    private char color;
 
-    public shirt(char fit, String sleeve, char color, int itemid, String desc, char colorCode, double price) {
+    public shirt(int itemid, String desc,char colorCode,double price, char fit, String sleeve) {
         super(itemid, desc, colorCode, price);
         this.fit = fit;
         this.sleeve = sleeve;
-        this.color = color;
     }
     
     @Override
@@ -43,17 +41,4 @@ public class shirt extends Clothing {
     public void setSleeve(String sleeve) {
         this.sleeve = sleeve;
     }
-
-    public char getColor() {
-        return color;
-    }
-
-    public void setColor(char color) {
-        this.color = color;
-    }
-    
-    
-    
-    
-    
 }
