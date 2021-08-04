@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sg2.lesson12;
+package sg2.lesson13;
 
 /**
  *
  * @author User
  */
-public class sock extends material {
-    
-    private double price;
-    
-    sock happySock = new sock();
-    
+public interface returnable {
+    public String doReturn();
 }

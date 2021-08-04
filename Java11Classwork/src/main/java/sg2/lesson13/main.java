@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sg2.lesson12;
+package sg2.lesson13;
 
 /**
  *
@@ -29,6 +29,7 @@ public class main {
         if(trouser02 instanceof trouser) {
             char fitcode = ((trouser)trouser02).getFit();
             System.out.println("Trouser 2 fit: " + ((trouser)trouser02).getFit());
+            System.out.println("Trouser 2 fit: " + ((trouser)trouser02).getFit());
         }
         else {
             System.out.println(".........................");
@@ -36,5 +37,9 @@ public class main {
         }
         System.out.println(".........................");
         System.out.println(trouser02.toString());
+        
+        System.out.println(".........................");
+        System.out.println(((shirt)shirt01).doReturn());
+       
     }
 }
