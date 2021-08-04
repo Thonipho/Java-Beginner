@@ -15,7 +15,15 @@ public class league {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        player player1 = new player();
+        player1.playerName = "George Eliot";
+        player player2 = new player();
+        player2.playerName = "Geoffrey Chaucer";
+        player player3 = new player();
+        player3.playerName = "Graham Greene";
+        
+        
     }
     
 }
