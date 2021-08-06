@@ -88,4 +88,8 @@ public class league {
         }
     }
     
+    public static Game[] createGames(Team[] theTeams) {
+        team[] theTeams = {team1,team2};
+    }
+    
 }
