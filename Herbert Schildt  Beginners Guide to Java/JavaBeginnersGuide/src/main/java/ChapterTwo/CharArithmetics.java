@@ -31,10 +31,9 @@ public class CharArithmetics {
         
         System.out.println("............................");
         
-        char alph = 'A';
         
-        for(int i=0; i<22; i++) {
-            alph++;
+        
+        for(char alph = 'A'; alph<='Z'; alph++) {
             System.out.println(alph);
         }
     }
