@@ -27,7 +27,12 @@ public class GuessGame {
         ch = (char) System.in.read(); // read a char from the keyboard
         
         if(ch == awnser) System.out.println("**Right**");
-        else System.out.println("...Sorry, youre wrong");
+        else {
+            System.out.println("...Sorry, youre ");
+            //nested if
+            if(ch < awnser) System.out.println("too low");
+            else System.out.println("too high");
+        }
     }
     
     
