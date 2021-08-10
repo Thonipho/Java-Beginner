@@ -31,10 +31,9 @@ public class VehicleDemo {
         sportscar.mpg = 12;
         
         // compute the range assuming a full tank of gas
-        System.out.println("Minivan can carry " + minivan.passengers + " passengers " );
+        System.out.println("Minivan can carry " + minivan.passengers + " passengers for a range of " + minivan.range() + " km's" );
         minivan.range();
-        System.out.println("Sportscar can carry " + sportscar.passengers + " passengers " );
-        sportscar.range();
+        System.out.println("Sportscar can carry " + sportscar.passengers + " passengers for a range of " + sportscar.range() + " km's" );
     }
     
 }

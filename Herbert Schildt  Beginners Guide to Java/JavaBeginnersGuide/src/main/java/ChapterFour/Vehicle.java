@@ -13,7 +13,7 @@ public class Vehicle {
     int passengers, fuelcap, mpg;
     
     //display the range
-    void range() {
-        System.out.println("Range is " + fuelcap * mpg);
+    int range() {
+        return fuelcap * mpg;
     }
 }
