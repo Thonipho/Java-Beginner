@@ -18,16 +18,23 @@ public class VehicleDemo {
         // this class declares objects of type vehicle
         
         Vehicle minivan = new Vehicle();
-        int range;
+        Vehicle sportscar = new Vehicle();
         
         // assign values to fields in minivan
         minivan.passengers = 7;
         minivan.fuelcap = 16;
         minivan.mpg = 21;
         
+        // assign values to fields in sportcar
+        sportscar.passengers = 2;
+        sportscar.fuelcap =16;
+        sportscar.mpg = 12;
+        
         // compute the range assuming a full tank of gas
-        range = minivan.fuelcap * minivan.mpg;
-        System.out.println("Minivan can carry " + minivan.passengers + "with a range of " + range);
+        System.out.println("Minivan can carry " + minivan.passengers + " passengers " );
+        minivan.range();
+        System.out.println("Sportscar can carry " + sportscar.passengers + " passengers " );
+        sportscar.range();
     }
     
 }
