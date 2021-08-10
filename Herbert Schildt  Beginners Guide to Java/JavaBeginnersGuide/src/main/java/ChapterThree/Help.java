@@ -66,9 +66,22 @@ public class Help {
                 System.out.println("The while:\n");
                 System.out.println("while(condition) statement;");
                 break;
-            default:
-                System.out.println("Selection not found");
+            case '5':
+                System.out.println("The do-while:\n");
+                System.out.println("do {");
+                System.out.println(" statement;");
+                System.out.println("} while (condition);");
+                break;
+            case '6':
+                System.out.println("The break:\n");
+                System.out.println("break; or break label");
+                break;
+            case '7':
+                System.out.println("The continue:\n");
+                System.out.println("continue; or continue label");
+                break;
         }
+        System.out.println();
     }
     
 }
