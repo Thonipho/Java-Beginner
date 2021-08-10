@@ -17,23 +17,19 @@ public class VehicleDemo {
     public static void main(String[] args) {
         // this class declares objects of type vehicle
         
-        Vehicle minivan = new Vehicle();
-        Vehicle sportscar = new Vehicle();
+        Vehicle minivan = new Vehicle(7,16,21);
+        Vehicle sportscar = new Vehicle(2,16,12);
+        double litres;
+        int dist = 252;
         
-        // assign values to fields in minivan
-        minivan.passengers = 7;
-        minivan.fuelcap = 16;
-        minivan.mpg = 21;
-        
-        // assign values to fields in sportcar
-        sportscar.passengers = 2;
-        sportscar.fuelcap =16;
-        sportscar.mpg = 12;
-        
-        // compute the range assuming a full tank of gas
+        // putting the attributes in description
         System.out.println("Minivan can carry " + minivan.passengers + " passengers for a range of " + minivan.range() + " km's" );
-        minivan.range();
+        System.out.println("To travel " + dist + " km's minivan needs " + minivan.fuelneeded(dist) + " litres of fuel");
+        
+        System.out.println("........................");
+        
         System.out.println("Sportscar can carry " + sportscar.passengers + " passengers for a range of " + sportscar.range() + " km's" );
+        System.out.println("To travel " + dist + " km's minivan needs " + sportscar.fuelneeded(dist) + " litres of fuel");
     }
     
 }

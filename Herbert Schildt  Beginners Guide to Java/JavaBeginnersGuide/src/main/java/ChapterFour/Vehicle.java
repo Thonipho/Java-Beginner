@@ -16,4 +16,15 @@ public class Vehicle {
     int range() {
         return fuelcap * mpg;
     }
+
+    public Vehicle(int passengers, int fuelcap, int mpg) {
+        this.passengers = passengers;
+        this.fuelcap = fuelcap;
+        this.mpg = mpg;
+    }
+    
+    //compute fuel needed for a given distance
+    double fuelneeded(int miles) {
+        return (double) miles/mpg;
+    }
 }
