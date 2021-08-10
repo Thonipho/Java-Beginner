@@ -17,15 +17,30 @@ public class Help {
     public static void main(String[] args) throws java.io.IOException {
         // a simple help system
         
-        char choice;
+        char choice, ignore;
         
-        System.out.println("Help on: ");
-        System.out.println("\t1. if ");
-        System.out.println("\t2. switch ");
-        System.out.println("Choose one: ");
-        choice = (char) System.in.read();
-        
-        System.out.println("\n");
+        for(;;) {
+            do {
+                System.out.println("Help on: ");
+                System.out.println("\t1. if ");
+                System.out.println("\t2. switch ");
+                System.out.println("\t3. for ");
+                System.out.println("\t4. while ");
+                System.out.println("\t5. do-while ");
+                System.out.println("\t6. break ");
+                System.out.println("\t2. continue\n ");
+                System.out.println("Choose one (q to quit): ");
+                
+                choice = (char) System.in.read();
+                
+                do {
+                    ignore = (char) System.in.read();
+                }while(ignore != '\n');
+            }while(choice < '1' | choice > '7' & choice != 'q');
+            
+            if(choice == 'q') break;
+            System.out.println("\n");
+        }
         
         switch(choice) {
             case '1':
@@ -41,6 +56,15 @@ public class Help {
                 System.out.println("\t\tbreak");
                 System.out.println("\t// ...");
                 System.out.println("}");
+                break;
+            case '3':
+                System.out.println("The for:\n");
+                System.out.println("for(init; condition; iteration)");
+                System.out.println(" statement;");
+                break;
+            case '4':
+                System.out.println("The while:\n");
+                System.out.println("while(condition) statement;");
                 break;
             default:
                 System.out.println("Selection not found");
