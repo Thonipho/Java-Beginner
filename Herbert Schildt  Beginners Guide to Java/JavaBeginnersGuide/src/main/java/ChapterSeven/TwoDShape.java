@@ -16,6 +16,12 @@ public class TwoDShape {
     private double width;
     private double height;
     
+    // parameterized constructor
+    TwoDShape(double w, double h) {
+        width = w;
+        height = h;
+    }
+    
     //Accessor methods for width and height
     double getWidth() {return width;}
     double getHeight() {return height;}

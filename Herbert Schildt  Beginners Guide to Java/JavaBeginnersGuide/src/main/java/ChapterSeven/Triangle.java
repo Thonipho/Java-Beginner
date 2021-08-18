@@ -14,6 +14,11 @@ public class Triangle extends TwoDShape {
     
     String style;
     
+    Triangle(String s, double w, double h) {
+        super(w,h);
+        style = s;
+    }
+    
     double area() {
         return getWidth()*getHeight()/2;
     }
