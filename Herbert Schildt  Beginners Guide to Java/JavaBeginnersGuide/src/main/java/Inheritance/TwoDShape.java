@@ -9,7 +9,7 @@ package Inheritance;
  *
  * @author User
  */
-public class TwoDShape {
+abstract class TwoDShape {
     // A simple class hierarchy
     // A class for two dimensional objects
     
@@ -55,8 +55,6 @@ public class TwoDShape {
         System.out.println("Width and height are " + width + " and " + height);
     }
     
-    double area() {
-        System.out.println("area() must be overriden");
-        return 0.0;
-    }
+    // area() is abstract
+    abstract double area();
 }
