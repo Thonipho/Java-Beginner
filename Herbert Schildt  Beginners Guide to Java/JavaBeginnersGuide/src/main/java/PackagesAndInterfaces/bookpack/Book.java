@@ -10,18 +10,19 @@ package PackagesAndInterfaces.bookpack;
  * @author User
  */
 // A short package demonstration
+// Book recorded for public access
 public class Book {
-    private String title;
-    private String author;
-    private int pubDate;
+    protected String title;
+    protected String author;
+    protected int pubDate;
     
-    Book(String t, String a, int d) {
+    public Book(String t, String a, int d) {
         title =t;
         author = a;
         pubDate = d;
     }
     
-    void show() {
+    public void show() {
         System.out.println(title);
         System.out.println(author);
         System.out.println(pubDate);
