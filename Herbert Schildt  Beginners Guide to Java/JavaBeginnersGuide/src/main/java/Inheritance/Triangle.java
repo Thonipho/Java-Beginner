@@ -14,6 +14,12 @@ public class Triangle extends TwoDShape {
     
     String style;
     
+    //a default constructor
+    Triangle() {
+        super();
+        style = "none";
+    }
+    
     Triangle(String s, double w, double h) {
         super(w,h);
         style = s;

@@ -16,12 +16,13 @@ public class Shapes {
      */
     public static void main(String[] args) {
         
-        Triangle t1 = new Triangle("filled", 4.0, 4.0);
-        Triangle t2 = new Triangle("outlined", 8.0, 12.0);
+        ColorTriangle t1 = new ColorTriangle("Blue", "filled", 4.0, 4.0);
+        ColorTriangle t2 = new ColorTriangle("Red", "outlined", 8.0, 12.0);
         
         System.out.println("Info for t1: ");
         t1.showStyle();
         t1.showDim();
+        t1.showColor();
         System.out.println("Area is " + t1.area());
         
         System.out.println();
@@ -29,6 +30,7 @@ public class Shapes {
         System.out.println("Info for t2: ");
         t2.showStyle();
         t2.showDim();
+        t2.showColor();
         System.out.println("Area is " + t2.area());
     }
     
