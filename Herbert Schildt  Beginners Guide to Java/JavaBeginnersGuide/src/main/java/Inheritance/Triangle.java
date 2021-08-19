@@ -20,11 +20,25 @@ public class Triangle extends TwoDShape {
         style = "none";
     }
     
+    //constructor for triangle
     Triangle(String s, double w, double h) {
-        super(w,h);
+        super(w,h,"triangle");
         style = s;
     }
     
+    //one argument constructor
+    Triangle(double x) {
+        super(x,"triangle");
+    }
+    
+    //construct an object from an object
+    Triangle(Triangle ob) {
+        super(ob);
+        style = ob.style;
+    }
+    
+    //override area()
+    @Override
     double area() {
         return getWidth()*getHeight()/2;
     }
