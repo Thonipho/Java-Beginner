@@ -16,6 +16,7 @@ public class ReadBytes {
     /**
      * @param args the command line arguments
      */
+    // Read an array of bytes from the keyboard
     public static void main(String[] args)
             throws IOException {
         byte data[] = new byte[10];
