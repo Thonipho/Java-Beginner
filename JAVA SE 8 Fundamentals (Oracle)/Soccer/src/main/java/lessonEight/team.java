@@ -12,7 +12,7 @@ package lessonEight;
  *
  * @author User
  */
-public class team {
+public class Team {
     public String teamName;
-    public player [] playerArray;
+    public Player [] playerArray;
 }

@@ -12,6 +12,6 @@ package lessonEight;
  *
  * @author User
  */
-public class player {
+public class Player {
     public String playerName;
 }

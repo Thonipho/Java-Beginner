@@ -12,8 +12,8 @@ package lessonEight;
  *
  * @author User
  */
-public class game {
-    public team hometeam;
-    public team awayteam;
-    public goal [] goals;
+public class Game {
+    public Team homeTeam;
+    public Team awayTeam;
+    public Goal [] goals;
 }

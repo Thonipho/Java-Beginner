@@ -12,8 +12,8 @@ package lessonEight;
  *
  * @author User
  */
-public class goal {
-    public team theTeam;
-    public player thePlayer;
+public class Goal {
+    public Team theTeam;
+    public Player thePlayer;
     public double theTime;
 }
