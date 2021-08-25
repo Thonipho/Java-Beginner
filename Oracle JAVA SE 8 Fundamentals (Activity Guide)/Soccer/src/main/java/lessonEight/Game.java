@@ -19,12 +19,16 @@ public class Game {
     public Team awayTeam;
     public Goal [] goals;
     
-    public void playGame() {
+    public void playGame(int maxGoals) {
         // randomly creating goals and assigning them to a player and their team
-        int numberOfGoals = (int) (Math.random() * 7);
+        int numberOfGoals = (int) (Math.random() * (maxGoals +1));
         Goal[] theGoals = new Goal[numberOfGoals];
         this.goals = theGoals;
         GameUtils.addGameGoals(this);
+    }
+    
+    public void playGame() {
+        playGame(6);
     }
     
     public String getDescription() {

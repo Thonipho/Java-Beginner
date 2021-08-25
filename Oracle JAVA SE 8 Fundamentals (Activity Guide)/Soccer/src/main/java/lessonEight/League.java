@@ -18,18 +18,20 @@ public class League {
      */
     public static void main(String[] args) {
         
+        League theLeague = new League();
+        
         // creating arrays to store the teams of the game
-        Team[] theTeams = createTeams();
-        Game[] theGames = createGames(theTeams);
+        Team[] theTeams = theLeague.createTeams();
+        Game[] theGames = theLeague.createGames(theTeams);
         
         // creating a new match and printing match description
         Game currGame = theGames[0];
-        currGame.playGame(3);
+        currGame.playGame();
         System.out.println(currGame.getDescription());
         
     }
 
-    public static Team[] createTeams() {
+    public Team[] createTeams() {
         // creating and assigining team players
         
         Player player1 = new Player();
@@ -59,7 +61,7 @@ public class League {
         return theTeams;
     }
 
-    public static Game[] createGames(Team[] theTeams) {
+    public Game[] createGames(Team[] theTeams) {
         // assigning teams to the match
         
         Game theGame = new Game();
