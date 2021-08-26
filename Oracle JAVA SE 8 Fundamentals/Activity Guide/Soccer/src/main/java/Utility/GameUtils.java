@@ -9,7 +9,7 @@ package Utility;
  *
  * @author User
  */
-import Encapsulation.*;
+import MoreOnConditionals.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
