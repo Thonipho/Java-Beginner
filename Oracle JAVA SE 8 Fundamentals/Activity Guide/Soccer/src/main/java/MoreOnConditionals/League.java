@@ -37,20 +37,20 @@ public class League {
     public Team[] createTeams() {
         // creating and assigining team players
 
-        Player player1 = new Player("George Eliot");
-        Player player2 = new Player("Graham Greene");
-        Player player3 = new Player("Geoffrey Chaucer");
+        Player player1 = new Player("Roberto Firmino");
+        Player player2 = new Player("Sadio Mane");
+        Player player3 = new Player("Mo Salah");
         Player[] thePlayers = {player1, player2, player3};
 
-        Team team1 = new Team("The Greens", thePlayers);
+        Team team1 = new Team("Liverpool", thePlayers);
 
         // Create team2
         Team team2 = new Team();
-        team2.setTeamName("The Reds");
+        team2.setTeamName("Chelsea");
         team2.setPlayerArray(new Player[3]);
-        team2.getPlayerArray()[0] = new Player("Robert Service");
-        team2.getPlayerArray()[1] = new Player("Robbie Burns");
-        team2.getPlayerArray()[2] = new Player("Rafael Sabatini");
+        team2.getPlayerArray()[0] = new Player("Tino Werner");
+        team2.getPlayerArray()[1] = new Player("Romeru Lukaku");
+        team2.getPlayerArray()[2] = new Player("Mateo Kovatic");
 
         Team[] theTeams = {team1, team2};
         return theTeams;
@@ -73,8 +73,15 @@ public class League {
         System.out.println("\nTeam Points");
         
         for(Team currTeam: theTeams) {
-            System.out.println(currTeam.getTeamName() + ":" + currTeam.getPointsTotal());
-            currBestTeam = currTeam.getPointsTotal() > currBestTeam.getPointsTotal()? currTeam:currBestTeam;
+            System.out.println(currTeam.getTeamName() + ":" + currTeam.getPointsTotal() + ":" + currTeam.getGoalsTotal());
+            if(currTeam.getPointsTotal() > currBestTeam.getPointsTotal()) {
+                currBestTeam = currTeam;
+            }
+            else if (currTeam.getPointsTotal() == currBestTeam.getPointsTotal()) {
+                if (currTeam.getGoalsTotal() > currBestTeam.getGoalsTotal()) {
+                    currBestTeam = currTeam;
+                }
+            }
         }
         System.out.println("Winner of the league is " + currBestTeam.getTeamName());
     }

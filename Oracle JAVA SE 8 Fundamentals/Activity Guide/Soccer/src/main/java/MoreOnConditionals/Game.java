@@ -45,9 +45,11 @@ public class Game {
         for (Goal currGoal : this.getGoals()) {
             if (currGoal.getTheTeam() == homeTeam) {
                 homeTeamGoals++;
+                homeTeam.incGoalsTotal(1);
             }
             else {
                 awayTeamGoals++;
+                awayTeam.incGoalsTotal(1);
             }
             returnString.append("Goal scored after " + currGoal.getTheTime() + " mins by "
                     + currGoal.getThePlayer().getPlayerName() + " of " + currGoal.getTheTeam().getTeamName() + "\n");
@@ -59,11 +61,11 @@ public class Game {
             awayTeam.incPointsTotal(1);
         }
         else if (homeTeamGoals > awayTeamGoals) {
-           returnString.append(homeTeam.getTeamName() + "win!");
+           returnString.append(homeTeam.getTeamName() + " win!");
            homeTeam.incPointsTotal(3);
         }
         else {
-            returnString.append(awayTeam.getTeamName() + "win!");
+            returnString.append(awayTeam.getTeamName() + " win!");
             awayTeam.incPointsTotal(3);
         }
         
