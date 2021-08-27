@@ -7,6 +7,7 @@ package ArraysLoopsAndDates;
 
 import Utility.GameUtils;
 import ArraysLoopsAndDates.PlayerDatabase;
+import java.time.*;
 import java.util.*;
 
 /**
@@ -25,6 +26,8 @@ public class League {
         // creating arrays to store the teams of the game
         Team[] theTeams = theLeague.createTeams("Liverpool,Chelsea,Arsenal",3);
         Game[] theGames = theLeague.createGames(theTeams);
+        
+        System.out.println(theLeague.getLeagueAnnouncment(theGames));
 
         // creating a new match and printing match description
         for (Game currGame : theGames) {
@@ -49,12 +52,15 @@ public class League {
     }
 
     public Game[] createGames(Team[] theTeams) {
-        // assigning teams to the match
+        // creating matches and assigning teams
+        int daysBetweenGames = 0;
         ArrayList<Game> theGames = new ArrayList();
+        
         for(Team homeTeam: theTeams) {
             for(Team awayTeam: theTeams) {
                 if(homeTeam!=awayTeam) {
-                    theGames.add(new Game(homeTeam,awayTeam));
+                    daysBetweenGames +=7;
+                    theGames.add(new Game(homeTeam, awayTeam, LocalDateTime.now().plusDays(daysBetweenGames)));
                 }
             }
         }
@@ -78,5 +84,13 @@ public class League {
         }
         System.out.println("Winner of the league is " + currBestTeam.getTeamName());
     }
-
+    
+    public String getLeagueAnnouncment(Game[] theGames) {
+        Period thePeriod = Period.between(theGames[0].getTheDateTime().toLocalDate(),
+                theGames[theGames.length-1].getTheDateTime().toLocalDate());
+        
+        return "The league is scheduled to run for " + thePeriod.getMonths() + " months(s), and " +
+                thePeriod.getDays() + " days(s)\n";
+    }
+    
 }

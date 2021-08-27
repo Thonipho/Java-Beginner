@@ -6,6 +6,8 @@
 package ArraysLoopsAndDates;
 
 import Utility.GameUtils;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -16,10 +18,12 @@ public class Game {
     private Team homeTeam;
     private Team awayTeam;
     private Goal[] goals;
+    private LocalDateTime theDateTime;
 
-    public Game(Team homeTeam, Team awayTeam) {
+    public Game(Team homeTeam, Team awayTeam, LocalDateTime theDateTime) {
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
+        this.theDateTime = theDateTime;
     }
 
     public void playGame(int maxGoals) {
@@ -40,7 +44,8 @@ public class Game {
         int awayTeamGoals = 0;
         StringBuilder returnString = new StringBuilder();
 
-        System.out.println(homeTeam.getTeamName() + " vs " + awayTeam.getTeamName());
+        System.out.println(homeTeam.getTeamName() + " vs " + awayTeam.getTeamName() + "\n" +
+                "Date " + this.theDateTime.format(DateTimeFormatter.ISO_LOCAL_DATE) + "\n");
 
         for (Goal currGoal : this.getGoals()) {
             if (currGoal.getTheTeam() == homeTeam) {
@@ -110,5 +115,13 @@ public class Game {
      */
     public void setGoals(Goal[] goals) {
         this.goals = goals;
+    }
+
+    public LocalDateTime getTheDateTime() {
+        return theDateTime;
+    }
+
+    public void setTheDateTime(LocalDateTime theDateTime) {
+        this.theDateTime = theDateTime;
     }
 }
