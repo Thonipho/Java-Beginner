@@ -9,8 +9,8 @@ package Inheritance;
  *
  * @author User
  */
-public class Goal extends GameEvent {
-
+public abstract class GameEvent {
+    
     private Team theTeam;
     private Player thePlayer;
     private double theTime;
