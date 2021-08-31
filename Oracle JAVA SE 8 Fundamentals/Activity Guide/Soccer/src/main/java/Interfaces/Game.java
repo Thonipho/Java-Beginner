@@ -67,6 +67,7 @@ public class Game {
             }
             returnString.append(currEvent + " after " + currEvent.getTheTime() + " mins by "
                     + currEvent.getThePlayer().getPlayerName() + " of " + currEvent.getTheTeam().getTeamName() + "\n");
+            currEvent.getThePlayer().incGoalsScored();
         }
 
         if (homeTeamGoals == awayTeamGoals) {

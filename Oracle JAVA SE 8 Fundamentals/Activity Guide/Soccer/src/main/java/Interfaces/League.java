@@ -35,6 +35,7 @@ public class League {
         }
 
         theLeague.showBestTeam(theTeams);
+        theLeague.showBestPlayers(theTeams);
 
     }
 
@@ -85,6 +86,22 @@ public class League {
 
         return "The league is scheduled to run for " + thePeriod.getMonths() + " months(s), and "
                 + thePeriod.getDays() + " days(s)\n";
+    }
+
+    public void showBestPlayers(Team[] theTeams) {
+        ArrayList<Player> thePlayers = new ArrayList();
+        for (Team currTeam : theTeams) {
+            thePlayers.addAll(Arrays.asList(currTeam.getPlayerArray()));
+
+        }
+        Collections.sort(thePlayers, (p1, p2) ->
+            Double.valueOf(p2.getGoalsScored()).compareTo(Double.valueOf(p1.getGoalsScored())));
+        System.out.println("\n\nBest Players");
+
+        for (Player currPlayer : thePlayers) {
+            System.out.println(currPlayer.getPlayerName() + " : " + currPlayer.getGoalsScored());
+        }
+
     }
 
 }
