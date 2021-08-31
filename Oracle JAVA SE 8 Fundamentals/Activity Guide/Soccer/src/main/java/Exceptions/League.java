@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaces;
+package Exceptions;
 
-import Interfaces.PlayerDatabase;
+import Exceptions.PlayerDatabase;
+import Utility.PlayerDatabaseException;
 import java.time.*;
 import java.util.*;
 
@@ -22,24 +23,27 @@ public class League {
 
         League theLeague = new League();
 
-        // creating arrays to store the teams of the game
-        Team[] theTeams = theLeague.createTeams("Liverpool,Chelsea,Arsenal", 3);
-        Game[] theGames = theLeague.createGames(theTeams);
+        try {
+            // creating arrays to store the teams of the game
+            Team[] theTeams = theLeague.createTeams("Liverpool,Chelsea,Arsenal", 3);
+            Game[] theGames = theLeague.createGames(theTeams);
 
-        System.out.println(theLeague.getLeagueAnnouncment(theGames));
+            System.out.println(theLeague.getLeagueAnnouncment(theGames));
 
-        // creating a new match and printing match description
-        for (Game currGame : theGames) {
-            currGame.playGame();
-            System.out.println(currGame.getDescription());
+            // creating a new match and printing match description
+            for (Game currGame : theGames) {
+                currGame.playGame();
+                System.out.println(currGame.getDescription());
+            }
+
+            theLeague.showBestTeam(theTeams);
+            theLeague.showBestPlayers(theTeams);
+        } catch (Exception e) {
+            e.printStackTrace(System.err);
         }
-
-        theLeague.showBestTeam(theTeams);
-        theLeague.showBestPlayers(theTeams);
-
     }
 
-    public Team[] createTeams(String teamNames, int teamSize) {
+    public Team[] createTeams(String teamNames, int teamSize) throws PlayerDatabaseException {
         // creating teams and assigning players
         PlayerDatabase playerDB = new PlayerDatabase();
         StringTokenizer teamNameTokens = new StringTokenizer(teamNames, ",");
@@ -94,8 +98,8 @@ public class League {
             thePlayers.addAll(Arrays.asList(currTeam.getPlayerArray()));
 
         }
-        Collections.sort(thePlayers, (p1, p2) ->
-            Double.valueOf(p2.getGoalsScored()).compareTo(Double.valueOf(p1.getGoalsScored())));
+        Collections.sort(thePlayers, (p1, p2)
+                -> Double.valueOf(p2.getGoalsScored()).compareTo(Double.valueOf(p1.getGoalsScored())));
         System.out.println("\n\nBest Players:\n");
 
         for (Player currPlayer : thePlayers) {
