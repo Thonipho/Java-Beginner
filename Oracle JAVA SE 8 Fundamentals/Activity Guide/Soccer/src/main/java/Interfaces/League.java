@@ -67,20 +67,15 @@ public class League {
     }
 
     public void showBestTeam(Team[] theTeams) {
+        Arrays.sort(theTeams);
         Team currBestTeam = theTeams[0];
 
-        System.out.println("\nTeam Points");
+        System.out.println("\nTeam Points:\n");
 
         for (Team currTeam : theTeams) {
             System.out.println(currTeam.getTeamName() + ":" + currTeam.getPointsTotal() + ":" + currTeam.getGoalsTotal());
-            if (currTeam.getPointsTotal() > currBestTeam.getPointsTotal()) {
-                currBestTeam = currTeam;
-            } else if (currTeam.getPointsTotal() == currBestTeam.getPointsTotal()) {
-                if (currTeam.getGoalsTotal() > currBestTeam.getGoalsTotal()) {
-                    currBestTeam = currTeam;
-                }
-            }
         }
+        System.out.println("\n");
         System.out.println("Winner of the league is " + currBestTeam.getTeamName());
     }
 

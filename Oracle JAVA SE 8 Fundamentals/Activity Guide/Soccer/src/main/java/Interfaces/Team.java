@@ -9,7 +9,7 @@ package Interfaces;
  *
  * @author User
  */
-public class Team {
+public class Team implements Comparable {
 
     private String teamName;
     private Player[] playerArray;
@@ -78,5 +78,18 @@ public class Team {
 
     public void setGoalsTotal(int goalsTotal) {
         this.goalsTotal = goalsTotal;
+    }
+    
+    public int compareTo(Object theTeam) {
+        int returnValue = -1;
+        if (this.getPointsTotal() < ((Team)theTeam).getPointsTotal()) {
+            returnValue = 1;
+        } 
+        else if (this.getPointsTotal() == ((Team)theTeam).getPointsTotal()) {
+            if (this.getGoalsTotal() < ((Team)theTeam).getGoalsTotal()) {
+                returnValue = 1;
+            }
+        }
+        return returnValue;
     }
 }
